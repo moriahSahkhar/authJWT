@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Access Denied</title>
+
+    <style>
+    .center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .error-code{
+        font-size: 80px;
+        font-weight: 800px;
+    }
+
+    .error-text{
+        font-size: 50px;
+        color: #B80A29;
+    }
+    </style>
+    <link th:href="@{/assets/fontawesome-free-6.4.0-web/css/all.min.css}"
+          rel="stylesheet">
+</head>
+<body>
+<!--All related imports:: Start-->
+<div th:insert="~{global/primaryImports}"></div>
+<!--End-->
+
+<div class="center">
+    <div class="container justify-content-center">
+        <div class="row">
+            <div class="col error-code">
+                <i class="fa-solid fa-lock"></i> 403 <i class="fa-solid fa-lock"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col error-text">
+                Access Denied
+            </div>
+        </div>
+        <div class="row-2 offset-4 py-3">
+            <div class="col">
+                Go Back <a class="link-offset-2 link-underline link-underline-opacity-0" th:href="@{/home}">Home</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

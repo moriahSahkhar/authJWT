@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Swal Alerts</title>
+
+<link th:href="@{/assets/sweetalert/sweetalert2.min.css}"
+	rel="stylesheet">
+
+<script type="text/javascript"
+	th:src="@{/assets/sweetalert/sweetalert2.all.min.js}"></script>
+	
+</head>
+<body>
+	<div th:if="not ${#strings.isEmpty(param.error)}">
+		<script type="text/javascript" th:inline="javascript">
+			const errorMsg = /*[[${param.error}]]*/
+
+			Swal.fire({
+				icon : 'error',
+				title : 'Error!',
+				text : errorMsg,
+				confirmButtonText : 'Okay'
+			})
+		</script>
+	</div>
+
+	<div th:if="not ${#strings.isEmpty(param.success)}">
+		<script type="text/javascript" th:inline="javascript">
+			const successMsg = /*[[${param.success}]]*/
+
+				Swal.fire({
+					  title: "Success!",
+					  text: successMsg,
+					  icon: "success",
+					  button: "Aww yiss!",
+					});
+		</script>
+	</div>
+
+	<div th:if="${param.invalidCaptcha}">
+		<script type="text/javascript" th:inline="javascript">
+
+			Swal.fire({
+				icon : 'error',
+				title : 'Error!',
+				text : "Captcha Does Not Match!",
+				confirmButtonText : 'Okay'
+			})
+		</script>
+	</div>
+</body>
+</html>

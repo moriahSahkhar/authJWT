@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>National Service Scheme</title>
+</head>
+<link th:href="@{/css/index.css}" rel="stylesheet">
+
+<script type="text/javascript" th:src="@{/js/index.js}" defer></script>
+<body>
+
+	<!--All related imports:: Start-->
+	<div th:insert="~{global/primaryImports}"></div>
+	<div th:insert="~{global/swal}"></div>
+	<!--End-->
+
+	<div class="page-container">
+		<div class="content-wrap">
+			<nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom ">
+				<div class="container-fluid p-2">
+					<img class="me-3" src="/assets/img/nss.png" alt="NSS LOGO"
+						style="width: 50px; height: 50px" /> <a
+						class="navbar-brand text-primary header" href="#">National
+						Service Scheme</a>
+					<button class="navbar-toggler" type="button"
+						data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+						aria-controls="navbarNavAltMarkup" aria-expanded="false"
+						aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse justify-content-end me-5"
+						id="navbarNavAltMarkup">
+						<div class="navbar-nav">
+							<a class="nav-link active" aria-current="page" th:href="@{/}">Home</a>
+							<a class="nav-link" href="#">About</a> <a class="nav-link"
+								href="#">Contact</a>
+						</div>
+					</div>
+				</div>
+			</nav>
+
+			<div class="container">
+				<div class="main">
+					<div class="title">
+						<h1>National Service Scheme</h1>
+						<p>ESTD 1976</p>
+					</div>
+					<form method="post" class="loginForm" id="loginForm" th:object="${loginObj}"
+						th:action="@{/login}">
+						<div class="row py-3 mt-5">
+							<div class="mb-2 fs-6 text-warning" th:if="${param.logout}">You
+								have logged out.</div>
+							<div class="col-sm mb-3">
+								<div class="input-group mb-3">
+									<span class="input-group-text" id="basic-addon1"><i
+										class="bi bi-person-fill"></i></span> <input type="text"
+										th:field="*{username}" id="username" class="form-control"
+										placeholder="Username" required="required">
+								</div>
+							</div>
+							<div class="col-sm mb-2">
+								<div class="input-group mb-3">
+									<span class="input-group-text" id="basic-addon2"><i
+										class="bi bi-key-fill"></i></span> <input type="password"
+										th:field="*{password}" id="password" class="form-control"
+										placeholder="Password" required="required">
+								</div>
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="col">
+								<button type="submit"
+									class="btn btn-primary btn-block btn-large">Sign
+									in</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<footer class="text-center text-lg-start">
+			<!-- Copyright -->
+			<div class="text-center p-3"
+				style="background-color: rgba(0, 0, 0, 0.2)">Design and
+				Implemented by NIC Meghalaya</div>
+			<!-- Copyright -->
+		</footer>
+	</div>
+</body>
+</html>
