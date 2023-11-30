@@ -35,18 +35,18 @@ public class SecurityConfig {
                                 .permitAll()
                                 .anyRequest()
                                 .authenticated())
-                .formLogin(
-                        (login) -> login
-                                .loginPage("/login")
-                                .loginProcessingUrl("/login")
-                                .defaultSuccessUrl("/home")
-                                .failureUrl("/?error=Authentication Error")
-                                .permitAll())
-                .logout(
-                        (logout) -> logout
-                                .logoutUrl("/logout")
-                                .logoutSuccessUrl("/?logout")
-                                .permitAll())
+//                .formLogin(
+//                        (login) -> login
+//                                .loginPage("/")
+//                                .loginProcessingUrl("/login")
+//                                .defaultSuccessUrl("/home")
+//                                .failureUrl("/?error=Authentication Error")
+//                                .permitAll())
+//                .logout(
+//                        (logout) -> logout
+//                                .logoutUrl("/logout")
+//                                .logoutSuccessUrl("/?logout")
+//                                .permitAll())
                 .sessionManagement(
                         (session) -> session
                                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS))

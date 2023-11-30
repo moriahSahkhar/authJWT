@@ -9,6 +9,4 @@ import org.springframework.stereotype.Service;
 public class CommonService {
 
     private UserRepo userRepo;
-
-
 }

@@ -51,7 +51,7 @@ $(document).ready(function() {
 	doLogin = () => {
 		const captchaCheck = document.getElementById("captchaModal")
 		console.log(captchaCheck.value)
-		
+
 		if (captchaCheck.value === null || captchaCheck.value === "") {
 			$.alert("Please Enter Captcha", "Verification Required")
 		} else {
